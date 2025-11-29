@@ -1,4 +1,4 @@
-#Minecraft's Initial Server Networking
+# Minecraft's Initial Server Networking
 
 - The server starts a TCP listener in `ServerConnectionListener#startTcpServerListener`. This is only done once in `DedicatedServer#initServer`.
 	- Adds `ServerBootstrap` into the channel's collection, this bootstrap gets a `ChannelInitializer` that configures initial socket connections.
