@@ -1,6 +1,6 @@
 # Minecraft's Initial Server Networking
 
-- The server starts a TCP listener in `ServerConnectionListener#startTcpServerListener`. This is only done once in `DedicatedServer#initServer`.
+- The server starts a Netty TCP listener in `ServerConnectionListener#startTcpServerListener`. This is only done once in `DedicatedServer#initServer`.
 	- Adds `ServerBootstrap` into the channel's collection, this bootstrap gets a `ChannelInitializer` that configures initial socket connections.
 
 - Initial client data from a Netty socket is first processed by the set `ChannelInitializer` in `ServerBootstrap`, here the channel has its pipeline configured to decode bytes into packets, then that pipeline gets a `Connection` at *"packet_handler"*, and so on.
